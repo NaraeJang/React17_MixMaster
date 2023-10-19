@@ -22,7 +22,7 @@ const CocktailList = ({ drinks }) => {
   return (
     <Wrapper>
       {formmattedDrinks.map((item) => {
-        return <CocktailCard key={item.key} {...item} />;
+        return <CocktailCard key={item.id} {...item} />;
       })}
     </Wrapper>
   );
