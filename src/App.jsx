@@ -8,16 +8,18 @@ import {
   Newsletter,
 } from "./pages";
 
+import { loader as landingLoader } from "./pages/Landing";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
+    errorElement: <Error />,
     children: [
-      { index: true, element: <Landing /> },
+      { index: true, loader: landingLoader, element: <Landing /> },
       { path: "cocktail", element: <Cocktail /> },
       { path: "newsletter", element: <Newsletter /> },
       { path: "about", element: <About /> },
-      { path: "Error", element: <Error /> },
     ],
   },
 ]);
