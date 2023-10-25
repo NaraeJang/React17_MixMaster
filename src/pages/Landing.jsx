@@ -21,10 +21,7 @@ export const loader =
   async ({ request }) => {
     const url = new URL(request.url);
     const searchTerm = url.searchParams.get("search") || "";
-    const test = await queryClient.ensureQueryData(
-      searchCocktailsQuery(searchTerm)
-    );
-    console.log(test);
+    await queryClient.ensureQueryData(searchCocktailsQuery(searchTerm));
 
     // return { drinks: response.data.drinks, searchTerm };
     return { searchTerm };
